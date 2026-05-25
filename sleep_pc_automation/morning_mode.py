@@ -3,6 +3,8 @@ from __future__ import annotations
 import subprocess
 
 import screen_brightness_control as sbc
+import night_light
+import screen_temperature
 
 
 MORNING_BRIGHTNESS = 60
@@ -99,15 +101,17 @@ def set_registry_dword(name: str, value: int) -> None:
         log(f"Error inesperado configurando {name}: {exc}")
 
 
-def enable_light_mode() -> None:
-    set_registry_dword("AppsUseLightTheme", 1)
-    set_registry_dword("SystemUsesLightTheme", 1)
+def preserve_dark_mode() -> None:
+    set_registry_dword("AppsUseLightTheme", 0)
+    set_registry_dword("SystemUsesLightTheme", 0)
 
 
 def main() -> None:
     log("Iniciando modo manana.")
     set_brightness_for_all_monitors(MORNING_BRIGHTNESS)
-    enable_light_mode()
+    preserve_dark_mode()
+    night_light.disable()
+    screen_temperature.apply_day_profile()
     log("Modo manana finalizado. No se abrio ni cerro ninguna aplicacion.")
 
 

@@ -1,0 +1,5 @@
+sleep_pc_automation/night_override_state.json
+sleep_pc_automation/night_override_log.jsonl
+sleep_pc_automation/night_light_backup_*.reg
+sleep_pc_automation/night_light_settings_backup_*.reg
+sleep_pc_automation/__pycache__/

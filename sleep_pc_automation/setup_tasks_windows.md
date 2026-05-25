@@ -92,26 +92,8 @@ C:\Users\santi\OneDrive\Escritorio\sleep\sleep_pc_automation
 - Si usas un entorno virtual, en "Programa o script" puedes poner la ruta al `python.exe` de ese entorno.
 - Puedes probar cada tarea manualmente con clic derecho sobre la tarea y luego "Ejecutar".
 
-## Luz azul / Luz nocturna
+## Color calido
 
-Bajar brillo no es lo mismo que reducir luz azul. El brillo baja la intensidad general de la pantalla, pero no reemplaza un filtro de temperatura de color.
-
-El modo oscuro ayuda a que la computadora sea menos estimulante, pero tampoco reemplaza Windows Night Light / Luz nocturna. No se recomienda automatizar Night Light desde Python porque puede ser fragil entre versiones de Windows.
-
-Configura manualmente Windows Night Light:
-
-```text
-Configuracion -> Sistema -> Pantalla -> Luz nocturna -> Programar
-```
-
-Horario sugerido:
-
-```text
-23:30 a 08:30
-```
-
-Intensidad sugerida:
-
-```text
-70% a 100%
-```
+Los scripts controlan la temperatura de color directamente: `night_mode.py` aplica
+el perfil nocturno de `3300 K` y `morning_mode.py` aplica un perfil suave de `6000 K`.
+El permiso temporal usa el perfil suave y lo restaura cuando vuelve el modo noche.
