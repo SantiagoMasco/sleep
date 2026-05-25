@@ -3,7 +3,6 @@ from __future__ import annotations
 import subprocess
 
 import screen_brightness_control as sbc
-import night_light
 import screen_temperature
 
 
@@ -113,7 +112,6 @@ def main(force: bool = False) -> None:
 
             until = active_override_summary()
             if until:
-                night_light.disable()
                 screen_temperature.apply_day_profile()
                 log(f"Excepcion temporal vigente hasta {until}. Se conserva el modo de colores.")
                 return
@@ -123,7 +121,6 @@ def main(force: bool = False) -> None:
     log("Iniciando modo noche.")
     set_brightness_for_all_monitors(NIGHT_BRIGHTNESS)
     enable_dark_mode()
-    night_light.disable()
     screen_temperature.apply_night_profile()
     log("Modo noche finalizado. No se cerro ninguna aplicacion.")
 

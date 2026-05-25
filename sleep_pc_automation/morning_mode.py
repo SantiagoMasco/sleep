@@ -3,7 +3,6 @@ from __future__ import annotations
 import subprocess
 
 import screen_brightness_control as sbc
-import night_light
 import screen_temperature
 
 
@@ -110,7 +109,6 @@ def main() -> None:
     log("Iniciando modo manana.")
     set_brightness_for_all_monitors(MORNING_BRIGHTNESS)
     preserve_dark_mode()
-    night_light.disable()
     screen_temperature.apply_day_profile()
     log("Modo manana finalizado. No se abrio ni cerro ninguna aplicacion.")
 

@@ -98,8 +98,8 @@ guardada una intensidad nocturna de `75%`. En estas dos placas el perfil calido 
 intenso aceptado directamente es `3300 K` (a `3200 K` Windows lo rechaza). El perfil
 diurno queda apenas calido en `6000 K`.
 
-Si la programacion nativa de `Luz nocturna` llegara a encenderse, los modos la apagan
-antes de aplicar su propio perfil para evitar superponer dos filtros.
+La automatizacion no abre Configuracion de Windows ni ventanas de PowerShell al
+cambiar de perfil.
 
 ## Si solo cambia un monitor
 
